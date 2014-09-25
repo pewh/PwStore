@@ -1,0 +1,21 @@
+{{bs-button title="tes aje" type="primary"}}
+
+{{#link-to 'customers.create' class='btn'}}
+	<i class="icon-plus"></i>
+	<span>Add customer</span>
+{{/link-to}}
+
+<table class="">
+{{#each}}
+	<ul>
+		<li>{{name}}</li>
+		<li>{{address}}</li>
+		<li>{{contact}}</li>
+		<li>
+			{{#link-to 'customers.edit' this}}Edit{{/link-to}}
+		</li>
+	</ul>
+{{/each}}
+</table>
+
+<!-- customer pane later using outlet -->

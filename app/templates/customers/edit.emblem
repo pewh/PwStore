@@ -1,0 +1,6 @@
+ul
+	li = name
+	li = address
+	li = contact
+
+button click='goBack' Go Back

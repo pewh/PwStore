@@ -1,0 +1,7 @@
+html
+	head
+		title PwStore
+
+	body
+		render 'navigation'
+		.container == outlet
