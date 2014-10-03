@@ -3,5 +3,5 @@ html
 		title PwStore
 
 	body
-		render 'navigation'
+		top-navigation
 		.container == outlet
