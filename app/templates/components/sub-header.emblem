@@ -1,0 +1,11 @@
+header.navbar-default.navbar-fixed-top.navbar-sub-header
+	.container
+		.navbar-header
+			button.navbar-toggle type='button' data-toggle='collapse' data-target='.bs-navbar-collapse-sub'
+				span.sr-only Toggle sub-navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			li.navbar-brand style="visibility: hidden" PwStore
+		nav.collapse.navbar-collapse.bs-navbar-collapse-sub role='sub-navigation'
+			== yield

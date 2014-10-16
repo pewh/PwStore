@@ -1,0 +1,24 @@
+sub-header
+	form.navbar-form.navbar-left role="search"
+		div.form-group
+			input.form-control type="text" placeholder="Pencarian"
+
+	div.nav.navbar-nav.navbar-right
+		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Add customer'
+
+.row
+	.col-sm-9
+		table.table
+			thead: tr
+				th Nama
+				th Alamat
+				th Kontak
+				th
+			tbody: each: tr
+				td = name
+				td = address
+				td = contact
+				td
+					bs-button clicked='showEditForm' size='xs' icon='glyphicon glyphicon-plus' title='Edit'
+
+	.col-sm-3 == outlet
