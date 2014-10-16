@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{BASE_TAG}}
+    {{content-for 'head'}}
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/pw-store.css">
@@ -15,10 +15,5 @@
   <body>
     <script src="assets/vendor.js"></script>
     <script src="assets/pw-store.js"></script>
-    <script>
-      window.PwStoreENV = require('pw-store/config/environment')['default'];
-      window.EmberENV = window.PwStoreENV.EmberENV;
-      window.PwStore = require('pw-store/app')['default'].create(PwStoreENV.APP);
-    </script>
   </body>
 </html>
