@@ -7,7 +7,7 @@ sub-header
 		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Add customer'
 
 .row
-	.col-sm-9
+	.col-sm-8
 		table.table
 			thead: tr
 				th Nama
@@ -19,6 +19,8 @@ sub-header
 				td = address
 				td = contact
 				td
-					bs-button clicked='showEditForm' size='xs' icon='glyphicon glyphicon-plus' title='Edit'
+					bs-button clicked='showEditForm' clickedParamBinding='this' size='xs' icon='glyphicon glyphicon-plus' title='Edit'
+					|
+					bs-button clicked='destroyRecord' clickedParamBinding='this' size='xs' icon='glyphicon glyphicon-delete' type='danger' title='Delete'
 
-	.col-sm-3 == outlet
+	.col-sm-4 == outlet

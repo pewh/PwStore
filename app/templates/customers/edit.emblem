@@ -1,6 +1,6 @@
-ul
-	li = name
-	li = address
-	li = contact
+em-form form_layout='horizontal' model=this action='update'
+  em-input label='Nama' property='name'
+  em-input label='Alamat' property='address'
+  em-input label='Kontak' property='contact'
 
 button click='goBack' Go Back
