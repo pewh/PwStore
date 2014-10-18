@@ -6,7 +6,7 @@ export default Ember.ObjectController.extend({
 			this.transitionToRoute('customers.index');
 		},
 		update: function() {
-			this.get('model').save(function() {
+			this.get('model').save().then(function() {
 				this.transitionToRoute('customers.index');
 			}.bind(this));
 		}

@@ -6,6 +6,5 @@ header.navbar-default.navbar-fixed-top.navbar-sub-header
 				span.icon-bar
 				span.icon-bar
 				span.icon-bar
-			li.navbar-brand style="visibility: hidden" PwStore
 		nav.collapse.navbar-collapse.bs-navbar-collapse-sub role='sub-navigation'
 			== yield
