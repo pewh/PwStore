@@ -3,18 +3,25 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
 	filter: '',
 
+	checkFilterMatch: function( model, string ) {
+		var regex = new RegExp(string, 'gi');
+
+		for ( var attr in model._data ) {
+			if ( model.get(attr).match(regex) ) {
+				return true;
+			}
+		}
+
+		return false;
+	},
+
 	filteredModel: function() {
-		var filter = this.get('filter');
-		var regexRule = new RegExp(filter, 'gi');
+		var filter = this.get( 'filter' );
 
-		var filtered = this.get('customer').filter(function( customer ) {
-			return customer.get('name').match(regexRule) ||
-						 customer.get('address').match(regexRule) ||
-						 customer.get('contact').match(regexRule);
-		});
-
-		return filtered;
-	}.property('filter'),
+		return this.get('model').filter( function( model ) {
+			return this.checkFilterMatch( model, filter );
+		}, this);
+	}.property('filter', 'model.@each'),
 
 	actions: {
 		showCreateForm: function() {
@@ -26,10 +33,5 @@ export default Ember.ArrayController.extend({
 		destroyRecord: function( record ) {
 			record.destroyRecord();
 		}
-  },
-
-	toolbar: [
-		Ember.Object.create({ title: 'Edit', type: 'primary' }),
-		Ember.Object.create({ title: 'Delete', type: 'danger' })
-	]
+  }
 });
