@@ -3,9 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	appName: 'PwStore',
 	links: Ember.A([
-		// Ember.Object.create({title: 'Produk', model: 'products'})
-		// Ember.Object.create({title: 'Pemasok', model: 'suppliers'})
-		Ember.Object.create({title: 'Pelanggan', model: 'customers'})
+		Ember.Object.create({title: 'Daftar Barang', model: 'items'}),
+		Ember.Object.create({title: 'Daftar Pelanggan', model: 'customers'})
 
 		// Ember.Object.create({title: 'Faktur Beli', model: 'purchase-invoices'})
 		// Ember.Object.create({title: 'Transaksi Beli', model: 'purchase-invoices.new'})

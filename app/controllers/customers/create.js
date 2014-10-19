@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+	clearForm: function() {
+		this.set('name', '');
+		this.set('address', '');
+		this.set('contact', '');
+	},
+
 	actions: {
 		create: function() {
 			var record = this.store.createRecord('customer', {
@@ -10,7 +16,9 @@ export default Ember.ObjectController.extend({
       });
 
       record.save().then(function() {
-				this.transitionToRoute('customers.index');
+				this.model.pushObject({});
+				this.clearForm();
+				this.transitionToRoute('customers');
 			}.bind(this));
 		}
   }

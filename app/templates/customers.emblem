@@ -4,7 +4,7 @@ sub-header
 			= input class='form-control' type='search' valueBinding='filter' placeholder='Pencarian'
 
 	div.nav.navbar-nav.navbar-right
-		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Add customer'
+		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Pelanggan'
 
 .row
 	.col-sm-8
