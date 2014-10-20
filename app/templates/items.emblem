@@ -1,0 +1,27 @@
+sub-header
+	form.navbar-form.navbar-left role="search"
+		div.form-group
+			= input class='form-control' type='search' valueBinding='filter' placeholder='Pencarian'
+
+	div.nav.navbar-nav.navbar-right
+		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
+
+.row
+	.col-sm-8
+		table.table
+			thead: tr
+				th Nama Item
+				th Harga sewa
+				th Barang tersedia?
+				th
+			tbody: each model in filteredModel: tr
+				td = model.name
+				td = model.price
+				td
+					i class={:glyphicon model.is_available:glyphicon-ok:glyphicon-remove}
+				td
+					bs-button clicked='showEditForm' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-ok' type='info' title='Edit'
+					'
+					bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
+
+	.col-sm-4 == outlet

@@ -16,6 +16,11 @@ Router.map(function() {
     this.route('create');
   });
 
+  this.resource('transactions', function() {
+    this.route('edit', { path: '/:id' });
+    this.route('create');
+  });
+
   this.route('missing', { path: '/*path' });
   this.route('items');
   this.route('items/edit');

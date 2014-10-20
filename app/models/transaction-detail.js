@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var TransactionDetail = DS.Model.extend({
   transaction: DS.belongsTo('transaction'),
-  item: DS.belongsTo('item'),
+  item: DS.belongsTo('item', { async: true }),
   borrowed_at: DS.attr('date'), //belongsTo 'transaction' and get created_at
   returned_at: DS.attr('date'),
   price: DS.attr('number') // get price from item

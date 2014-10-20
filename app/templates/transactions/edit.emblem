@@ -1,0 +1,9 @@
+em-form form_layout='horizontal' submit_button=false model=this action='update'
+  em-input label='Nama' property='name'
+  em-input label='Alamat' property='address'
+  em-input label='Kontak' property='contact'
+
+  .form-group: .col-sm-offset-2.col-sm-10
+    input.btn.btn-primary type='submit' value='Simpan'
+    '
+    button.btn.btn-default click='goBack' Kembali

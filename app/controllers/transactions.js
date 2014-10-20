@@ -13,10 +13,10 @@ export default Ember.ArrayController.extend({
 
 	actions: {
 		showCreateForm: function() {
-			this.transitionToRoute('customers.create');
+			this.transitionToRoute('transactions.create');
 		},
 		showEditForm: function( model ) {
-			this.transitionToRoute('customers.edit', model.id);
+			this.transitionToRoute('transactions.edit', model.id);
 		},
 		destroyRecord: function( model ) {
 			model.destroyRecord();
