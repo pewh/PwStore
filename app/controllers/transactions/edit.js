@@ -1,15 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-	needs: ['transaction_details'],
-	
 	actions: {
 		goBack: function() {
-			this.transitionToRoute('items');
+			this.transitionToRoute('transactions');
 		},
 		update: function() {
 			this.get('model').save().then(function() {
-				this.transitionToRoute('items');
+				this.transitionToRoute('transctions');
 			}.bind(this));
 		}
 	}

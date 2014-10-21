@@ -22,8 +22,6 @@ Router.map(function() {
   });
 
   this.route('missing', { path: '/*path' });
-  this.route('items');
-  this.route('items/edit');
 });
 
 export default Router;

@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import ENV from 'pw-store/config/environment';
 
 export default Ember.Component.extend({
-	appName: 'PwStore',
+	appName: ENV.applicationTitle,
 	links: Ember.A([
 		Ember.Object.create({title: 'Daftar Barang', model: 'items'}),
 		Ember.Object.create({title: 'Daftar Pelanggan', model: 'customers'}),

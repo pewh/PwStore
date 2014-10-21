@@ -15,7 +15,7 @@ export default Ember.ArrayController.extend({
 		showCreateForm: function() {
 			this.transitionToRoute('transactions.create');
 		},
-		showEditForm: function( model ) {
+		showDetailTransaction: function( model ) {
 			this.transitionToRoute('transactions.edit', model.id);
 		},
 		destroyRecord: function( model ) {

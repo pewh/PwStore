@@ -1,9 +1,18 @@
-em-form form_layout='horizontal' submit_button=false model=this action='update'
-  em-input label='Nama' property='name'
-  em-input label='Alamat' property='address'
-  em-input label='Kontak' property='contact'
+h3 Detail Transaksi #{code}
 
-  .form-group: .col-sm-offset-2.col-sm-10
-    input.btn.btn-primary type='submit' value='Simpan'
-    '
-    button.btn.btn-default click='goBack' Kembali
+div.well
+  table.table
+    thead: tr
+      th Nama Tabung
+      th Harga Satuan
+      th Tgl Pinjam
+      th Tgl Kembali
+    tbody: each detail in model.details: tr
+      td = detail.item.name
+      td = detail.price
+      td = detail.borrowed_at
+      td = detail.returned_at
+
+  button.btn.btn-primary click='goBack' Cetak
+  '
+  button.btn.btn-default click='goBack' Kembali

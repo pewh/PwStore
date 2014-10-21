@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'pw-store',
+    applicationTitle: 'CV Aneka Raya',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
