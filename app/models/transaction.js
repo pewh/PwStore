@@ -6,7 +6,14 @@ var Transaction = DS.Model.extend({
     defaultValue: function() { return new Date(); }
   }),
   customer: DS.belongsTo('customer', { async: true }),
-  details: DS.hasMany('transaction-detail', { async: true })
+  details: DS.hasMany('transaction-detail', { async: true }),
+  total_prices: function() {
+    var details = this.get('details');
+
+    return details.reduce(function( previousValue, currentValue ) {
+      return previousValue + currentValue.get('price');
+    }, 0);
+  }.property('details.@each.price')
 });
 
 Transaction.reopenClass({

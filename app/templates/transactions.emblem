@@ -21,7 +21,7 @@ sub-header
 				td = model.created_at
 				td = model.code
 				td = model.customer.name
-				td 123
+				td = model.total_prices
 
 				td
 					bs-button clicked='showDetailTransaction' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-list' type='inverse' title='Detail'
