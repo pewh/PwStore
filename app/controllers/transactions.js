@@ -19,7 +19,9 @@ export default Ember.ArrayController.extend({
 			this.transitionToRoute('transactions.edit', model.id);
 		},
 		destroyRecord: function( model ) {
-			model.destroyRecord();
+      if ( confirm('Apakah Anda yakin untuk menghapus?') ) {
+        model.destroyRecord();
+      }
 		}
   }
 });
