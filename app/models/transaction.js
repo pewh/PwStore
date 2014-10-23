@@ -1,8 +1,7 @@
 import DS from 'ember-data';
 
 var Transaction = DS.Model.extend({
-  code: DS.attr('number'),
-  created_at: DS.attr('date', {
+  code: DS.attr('number'), created_at: DS.attr('date', {
     defaultValue: function() { return new Date(); }
   }),
   customer: DS.belongsTo('customer', { async: true }),
@@ -24,16 +23,17 @@ var Transaction = DS.Model.extend({
     var allTransactionsExpired = details.every(itemHasReturned);
     var anyTransactionsExpired = details.any(itemHasReturned);
 
-    if ( allTransactionsExpired ) { return 2; }
-    if ( anyTransactionsExpired ) { return 1; }
-    return 0;
+    if ( allTransactionsExpired ) { return 'ALL_EXPIRED'; }
+    if ( anyTransactionsExpired ) { return 'ANY_EXPIRED'; }
+    return 'NO_EXPIRED';
   }.property('details.@each.returned_at')
 });
 
 Transaction.reopenClass({
   FIXTURES: [
     { id: 1, code: 'transaction 1', customer: 1, details: [1, 2] },
-    { id: 2, code: 'transaction 2', customer: 2, details: [3, 4] }
+    { id: 2, code: 'transaction 2', customer: 2, details: [3, 4] },
+    { id: 3, code: 'transaction 3', customer: 1, details: [5] }
   ]
 });
 

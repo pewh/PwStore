@@ -13,7 +13,8 @@ TransactionDetail.reopenClass({
     { id: 1, item: 1, price: 12000, borrowed_at: new Date() },
     { id: 2, item: 2, price: 12000, borrowed_at: new Date(), returned_at: new Date() },
     { id: 3, item: 2, price: 12000, borrowed_at: new Date() },
-    { id: 4, item: 3, price: 12000, borrowed_at: new Date() }
+    { id: 4, item: 3, price: 12000, borrowed_at: new Date() },
+    { id: 5, item: 1, price: 15200, borrowed_at: new Date(), returned_at: new Date() },
   ]
 });
 

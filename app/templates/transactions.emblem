@@ -2,8 +2,6 @@ sub-header
 	form.navbar-form.navbar-left role="search"
 		div.form-group
 			= input class='form-control' type='search' valueBinding='filter' placeholder='Pencarian'
-			label
-			label Warna putih: belum dikembalikan, kuning: sebagian dikembalikan, biru: telah dikembalikan
 
 	div.nav.navbar-nav.navbar-right
 		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Transaksi'
@@ -16,14 +14,12 @@ sub-header
 				th No Transaksi
 				th Pelanggan
 				th Total Harga
-				th Expired?
 			tbody: each model in filteredModel
-				tr
+				tr-transaction-status status=model.transaction_status
 					td: format-datetime model.created_at
 					td = model.code
 					td = model.customer.name
 					td: format-currency model.total_prices
-					td = model.transaction_status
 
 					td
 						bs-button clicked='showDetailTransaction' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-list' type='inverse' title='Detail'
