@@ -13,7 +13,21 @@ var Transaction = DS.Model.extend({
     return details.reduce(function( previousValue, currentValue ) {
       return previousValue + currentValue.get('price');
     }, 0);
-  }.property('details.@each.price')
+  }.property('details.@each.price'),
+  transaction_status: function() {
+    var details = this.get('details');
+
+    var itemHasReturned = function( detail ) {
+      return !! detail.get('returned_at');
+    };
+
+    var allTransactionsExpired = details.every(itemHasReturned);
+    var anyTransactionsExpired = details.any(itemHasReturned);
+
+    if ( allTransactionsExpired ) return 2;
+    if ( anyTransactionsExpired ) return 1;
+    return 0;
+  }.property('details.@each.returned_at')
 });
 
 Transaction.reopenClass({

@@ -2,7 +2,7 @@ sub-header
 	form.navbar-form.navbar-left role="search"
 		div.form-group
 			= input class='form-control' type='search' valueBinding='filter' placeholder='Pencarian'
-			label 
+			label
 			label Warna putih: belum dikembalikan, kuning: sebagian dikembalikan, biru: telah dikembalikan
 
 	div.nav.navbar-nav.navbar-right
@@ -16,16 +16,18 @@ sub-header
 				th No Transaksi
 				th Pelanggan
 				th Total Harga
-				th
-			tbody: each model in filteredModel: tr
-				td = model.created_at
-				td = model.code
-				td = model.customer.name
-				td = model.total_prices
+				th Expired?
+			tbody: each model in filteredModel
+				tr-transaction-status model.transaction_status
+					td = model.created_at
+					td = model.code
+					td = model.customer.name
+					td = model.total_prices
+					td = model.transaction_status
 
-				td
-					bs-button clicked='showDetailTransaction' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-list' type='inverse' title='Detail'
-					'
-					bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
+					td
+						bs-button clicked='showDetailTransaction' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-list' type='inverse' title='Detail'
+						'
+						bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
 
 	.col-sm-4 == outlet
