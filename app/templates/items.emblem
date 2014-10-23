@@ -7,7 +7,7 @@ sub-header
 		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
 
 .row
-	.col-sm-8
+	.col-sm-6
 		table.table
 			thead: tr
 				th Nama Item
@@ -24,4 +24,4 @@ sub-header
 					'
 					bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
 
-	.col-sm-4 == outlet
+	.col-sm-offset-2.col-sm-4 == outlet

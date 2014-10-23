@@ -5,13 +5,17 @@ div.well
     thead: tr
       th Nama Tabung
       th Harga Satuan
-      th Tgl Pinjam
-      th Tgl Kembali
+      th Tanggal Pinjam
+      th Tanggal Kembali
+      th
     tbody: each detail in model.details: tr
-      td = detail.item.name
+      td: = detail.item.name
       td: format-currency detail.price
       td: format-datetime detail.borrowed_at
       td: format-datetime detail.returned_at
+      td
+        unless detail.returned_at
+          bs-button clicked='itemReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-ok' type='info'
 
   button.btn.btn-primary click='goBack' Cetak
   '
