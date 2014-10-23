@@ -24,8 +24,8 @@ var Transaction = DS.Model.extend({
     var allTransactionsExpired = details.every(itemHasReturned);
     var anyTransactionsExpired = details.any(itemHasReturned);
 
-    if ( allTransactionsExpired ) return 2;
-    if ( anyTransactionsExpired ) return 1;
+    if ( allTransactionsExpired ) { return 2; }
+    if ( anyTransactionsExpired ) { return 1; }
     return 0;
   }.property('details.@each.returned_at')
 });

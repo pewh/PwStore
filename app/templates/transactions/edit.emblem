@@ -9,9 +9,9 @@ div.well
       th Tgl Kembali
     tbody: each detail in model.details: tr
       td = detail.item.name
-      td = detail.price
-      td = detail.borrowed_at
-      td = detail.returned_at
+      td: format-currency detail.price
+      td: format-datetime detail.borrowed_at
+      td: format-datetime detail.returned_at
 
   button.btn.btn-primary click='goBack' Cetak
   '

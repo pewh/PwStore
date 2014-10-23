@@ -1,11 +1,12 @@
-import Ember from 'ember';
+// import Ember from 'ember';
 
-export function trTransactionStatus( transactionStatus, options ) {
-  if ( typeof transactionStatus !== 'undefined' ) {
-    return options.fn( this );
-  } else {
-    return options.inverse( this );
-  }
+// export function trTransactionStatus( transactionStatus ) {
+  // return 'tes';
+  // if ( typeof transactionStatus !== 'undefined' ) {
+  //   return options.fn( this );
+  // } else {
+  //   return options.inverse( this );
+  // }
   // var context = ( options.contexts && options.contexts[0] ) || this;
   //
   // var func = function( transactionStatus ) {
@@ -23,6 +24,6 @@ export function trTransactionStatus( transactionStatus, options ) {
   //
   // return Ember.Handlebars.bind.call( context, transactionStatus, options, func, func );
   // return new Ember.Handlebars.SafeString( output );
-}
+// }
 
-export default Ember.Handlebars.makeBoundHelper(trTransactionStatus);
+// export default Ember.Handlebars.makeBoundHelper(trTransactionStatus);

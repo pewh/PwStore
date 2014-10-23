@@ -18,11 +18,11 @@ sub-header
 				th Total Harga
 				th Expired?
 			tbody: each model in filteredModel
-				tr-transaction-status model.transaction_status
-					td = model.created_at
+				tr
+					td: format-datetime model.created_at
 					td = model.code
 					td = model.customer.name
-					td = model.total_prices
+					td: format-currency model.total_prices
 					td = model.transaction_status
 
 					td
