@@ -35,11 +35,25 @@ export default Ember.Mixin.create({
     return controller.store.createRecord(modelName, newRecord);
   },
 
-	clearForm: function() {
+	clearForm: function( response ) {
     var attributes = getAttributes(this.model);
 
     attributes.forEach(function( attribute ) {
-      this.set(attribute, '');
+      var actualValue = response.get(attribute);
+
+      switch (Ember.typeOf( actualValue )) {
+        case 'string':
+          this.set(attribute, '');
+          break;
+        case 'number':
+          this.set(attribute, 0);
+          break;
+        case 'array':
+          this.set(attribute, []);
+          break;
+        default:
+          this.set(attribute, null);
+      }
     }, this);
 	},
 
@@ -49,9 +63,9 @@ export default Ember.Mixin.create({
       // TODO use inflection
       var indexRouteName = this.get('modelName') + 's';
 
-      createRecord(this).save().then(function() {
+      createRecord(this).save().then(function( response ) {
         this.model.pushObject({});
-        this.clearForm();
+        this.clearForm(response);
         this.transitionToRoute(indexRouteName);
       }.bind(this));
     }
