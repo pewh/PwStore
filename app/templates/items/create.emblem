@@ -1,3 +1,6 @@
-em-form form_layout='horizontal' model=this action='create'
-	em-input label='Nama Barang' property='name'
-	em-input label='Harga Sewa' type='number' property='price'
+.well
+	em-form form_layout='horizontal' model=this action='create'
+		fieldset: legend Tambah Barang
+
+		em-input label='Nama Barang' property='name'
+		em-input label='Harga Sewa' type='number' property='price'

@@ -1,14 +1,6 @@
 import Ember from 'ember';
+import EditPageController from 'pw-store/mixins/edit-page-controller';
 
-export default Ember.ObjectController.extend({
-	actions: {
-		goBack: function() {
-			this.transitionToRoute('items');
-		},
-		update: function() {
-			this.get('model').save().then(function() {
-				this.transitionToRoute('items');
-			}.bind(this));
-		}
-	}
+export default Ember.ObjectController.extend(EditPageController, {
+  modelName: 'customer'
 });

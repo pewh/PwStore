@@ -31,6 +31,7 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "broccoli-emblem-compiler": "~0.3.18",
-    "ember-cli-bootstrap": "0.0.12"
+    "ember-cli-bootstrap": "0.0.12",
+    "ember-cli-sass": "~2.0.3"
   }
 }

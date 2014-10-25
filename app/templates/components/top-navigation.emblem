@@ -1,4 +1,4 @@
-header.navbar.navbar-inverse.navbar-fixed-top
+header.navbar.navbar-default.navbar-fixed-top
 	.container
 		.navbar-header
 			button.navbar-toggle type='button' data-toggle='collapse' data-target='.bs-navbar-collapse'

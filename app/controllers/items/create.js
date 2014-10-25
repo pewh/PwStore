@@ -1,23 +1,7 @@
 import Ember from 'ember';
+import CreatePageController from '../../mixins/create-page-controller';
 
-export default Ember.ObjectController.extend({
-	clearForm: function() {
-		this.set('name', '');
-		this.set('price', 0);
-	},
-
-	actions: {
-		create: function() {
-			var record = this.store.createRecord('item', {
-        name: this.get('name'),
-        price: this.get('price')
-      });
-
-      record.save().then(function() {
-				this.model.pushObject({});
-				this.clearForm();
-				this.transitionToRoute('items');
-			}.bind(this));
-		}
-  }
+export default Ember.ObjectController.extend(CreatePageController, {
+  // TODO clear `price` to 0, not ''
+  modelName: 'item'
 });

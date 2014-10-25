@@ -1,4 +1,7 @@
-em-form form_layout='horizontal' model=this action='create'
-	em-input label='Nama' property='name'
-	em-input label='Alamat' property='address'
-	em-input label='Kontak' property='contact'
+.well
+	em-form form_layout='horizontal' model=this action='create'
+		fieldset: legend Tambah Pelanggan
+
+		em-input label='Nama' property='name'
+		em-input label='Alamat' property='address'
+		em-input label='Kontak' property='contact'

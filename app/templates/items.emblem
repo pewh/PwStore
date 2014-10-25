@@ -1,10 +1,10 @@
 sub-header
 	form.navbar-form.navbar-left role="search"
 		div.form-group
-			= input class='form-control' type='search' valueBinding='filter' placeholder='Pencarian'
+			= input class='form-control input-sm' type='search' valueBinding='filter' placeholder='Pencarian'
 
 	div.nav.navbar-nav.navbar-right
-		bs-button clicked='showCreateForm' type='primary' icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
+		bs-button clicked='showCreateForm' type='primary' small=true icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
 
 .row
 	.col-sm-6

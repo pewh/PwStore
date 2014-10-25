@@ -1,22 +1,25 @@
-h3 Detail Transaksi #{code}
+.well
+	fieldset
+		legend
+			| Daftar item di
+			code #{code}
 
-div.well
-  table.table
-    thead: tr
-      th Nama Tabung
-      th Harga Satuan
-      th Tanggal Pinjam
-      th Tanggal Kembali
-      th
-    tbody: each detail in model.details: tr
-      td: = detail.item.name
-      td: format-currency detail.price
-      td: format-datetime detail.borrowed_at
-      td: format-datetime detail.returned_at
-      td
-        unless detail.returned_at
-          bs-button clicked='itemReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-ok' type='info'
+	table.table
+		thead: tr
+			th Nama Tabung
+			th Harga Satuan
+			th Tanggal Pinjam
+			th Tanggal Kembali
+			th
+		tbody: each detail in model.details: tr
+			td: = detail.item.name
+			td: format-currency detail.price
+			td: format-datetime detail.borrowed_at
+			td: format-datetime detail.returned_at
+			td
+				unless detail.returned_at
+					bs-button clicked='itemReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-ok' type='info'
 
-  button.btn.btn-primary click='goBack' Cetak
-  '
-  button.btn.btn-default click='goBack' Kembali
+	button.btn.btn-primary click='goBack' Cetak
+	'
+	button.btn.btn-default click='goBack' Kembali
