@@ -17,7 +17,9 @@
 			td: format-datetime detail.borrowed_at
 			td: format-datetime detail.returned_at
 			td
-				unless detail.returned_at
+				if detail.returned_at
+					bs-button clicked='cancelToReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-remove' type='danger'
+				else
 					bs-button clicked='itemReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-ok' type='info'
 
 	button.btn.btn-primary click='goBack' Cetak
