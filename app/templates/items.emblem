@@ -3,6 +3,15 @@ sub-header
 		div.form-group
 			= input class='form-control input-sm' type='search' valueBinding='filter' placeholder='Pencarian'
 
+		div
+			ul.nav.nav-pills
+				li.active
+					span.badge 333
+					| Item tersedia
+				li.active
+					span.badge 333
+					| Item yang sedang dipinjam
+
 	div.nav.navbar-nav.navbar-right
 		bs-button clicked='showCreateForm' type='primary' small=true icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
 
