@@ -2,10 +2,9 @@
 
 	export function formatDatetime(input) {
 	  if ( input ) {
-	    var date = new Date(input);
-	    return '%@/%@/%@'.fmt(date.getDate(), date.getMonth()+1, date.getFullYear());
+	    return moment(input).format('DD/MM/YYYY');
 	  } else {
-	    return '';
+	  	return '-';
 	  }
 	}
 

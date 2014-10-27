@@ -8,20 +8,10 @@ export default Ember.ObjectController.extend({
 		itemReturned: function( detail ) {
 	      detail.set('returned_at', new Date());
 	      detail.save();
-	      window.z = this;
-
-	      // this.get('model').save().then(function() {
-				// 	console.log('berhasil')
-				// });
 		},
 		cancelToReturned: function( detail ) {
 	      detail.set('returned_at', null);
 	      detail.save();
-	      window.z = this;
-
-	      // this.get('model').save().then(function() {
-				// 	console.log('berhasil')
-				// });
-		},
+		}
 	}
 });

@@ -9,13 +9,17 @@
 			th Nama Tabung
 			th Harga Satuan
 			th Tanggal Pinjam
+			th Jatuh Tempo
 			th Tanggal Kembali
+			th Denda
 			th
 		tbody: each detail in model.details: tr
 			td: = detail.item.name
 			td: format-currency detail.price
 			td: format-datetime detail.borrowed_at
+			td: format-datetime detail.max_returned_at
 			td: format-datetime detail.returned_at
+			td: format-currency detail.total_fine
 			td
 				if detail.returned_at
 					bs-button clicked='cancelToReturned' clickedParamBinding='detail' size='xs' icon='glyphicon glyphicon-remove' type='danger'
