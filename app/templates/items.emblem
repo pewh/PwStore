@@ -3,14 +3,17 @@ sub-header
 		div.form-group
 			= input class='form-control input-sm' type='search' valueBinding='filter' placeholder='Pencarian'
 
-		div
-			ul.nav.nav-pills
-				li.active
-					span.badge 333
-					| Item tersedia
-				li.active
-					span.badge 333
-					| Item yang sedang dipinjam
+		div.form-group
+				div.navbar-alert.alert.alert-info
+					i.glyphicon.glyphicon-ok
+					'
+					span #{availableQty} item tersedia
+
+		div.form-group
+				div.navbar-alert.alert.alert-warning
+					i.glyphicon.glyphicon-remove
+					'
+					span #{borrowedQty} item sedang dipinjam
 
 	div.nav.navbar-nav.navbar-right
 		bs-button clicked='showCreateForm' type='primary' small=true icon='glyphicon glyphicon-plus' class='navbar-btn' title='Tambah Barang'
@@ -33,4 +36,4 @@ sub-header
 					'
 					bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
 
-	.col-sm-offset-2.col-sm-4 == outlet
+	.col-sm-offset-1.col-sm-5 == outlet

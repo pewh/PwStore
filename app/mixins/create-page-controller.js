@@ -68,6 +68,13 @@ export default Ember.Mixin.create({
         this.clearForm(response);
         this.transitionToRoute(indexRouteName);
       }.bind(this));
-    }
+    },
+
+		goBack: function() {
+      // TODO use inflection
+      var index = this.get('modelName') + 's';
+
+			this.transitionToRoute(index);
+		}
   }
 });

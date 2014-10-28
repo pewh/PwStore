@@ -1,12 +1,12 @@
 .well
-	em-form form_layout='horizontal' submit_button=false model=this action='update'
-		fieldset: legend Edit Pelanggan
+	em-form model=this action='update' submit_button=false
+		fieldset: legend Edit Barang
 
 		em-input label='Nama Barang' property='name'
 		em-input label='Harga Sewa' type='number' property='price'
 
 
-		.form-group: .col-sm-offset-2.col-sm-10
+		.form-group
 			input.btn.btn-primary type='submit' value='Simpan'
 			'
 			button.btn.btn-default click='goBack' Kembali

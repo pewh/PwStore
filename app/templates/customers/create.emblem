@@ -1,7 +1,12 @@
 .well
-	em-form form_layout='horizontal' model=this action='create'
+	em-form model=this action='create' submit_button=false
 		fieldset: legend Tambah Pelanggan
 
 		em-input label='Nama' property='name'
 		em-input label='Alamat' property='address'
 		em-input label='Kontak' property='contact'
+
+		.form-group
+			input.btn.btn-primary type='submit' value='Simpan'
+			'
+			button.btn.btn-default click='goBack' Kembali

@@ -1,7 +1,7 @@
 .well
 	fieldset
 		legend
-			| Daftar item di
+			| Daftar item di nota
 			code #{code}
 
 	table.table
@@ -16,8 +16,8 @@
 		tbody: each detail in model.details: tr
 			td: = detail.item.name
 			td: format-currency detail.price
-			td: format-datetime detail.borrowed_at
-			td: format-datetime detail.max_returned_at
+			td: format-date detail.borrowed_at
+			td: format-date detail.max_returned_at
 			td: format-datetime detail.returned_at
 			td: format-currency detail.total_fine
 			td

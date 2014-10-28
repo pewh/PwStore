@@ -1,6 +1,11 @@
 .well
-	em-form form_layout='horizontal' model=this action='create'
+	em-form model=this action='create' submit_button=false
 		fieldset: legend Tambah Barang
 
 		em-input label='Nama Barang' property='name'
 		em-input label='Harga Sewa' type='number' property='price'
+
+		.form-group
+			input.btn.btn-primary type='submit' value='Simpan'
+			'
+			button.btn.btn-default click='goBack' Kembali

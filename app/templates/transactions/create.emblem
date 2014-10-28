@@ -1,7 +1,41 @@
 .well
-	em-form form_layout='horizontal' model=this action='create'
-		fieldset: legend Tambah Pelanggan
+	em-form model=this action='create' submit_button=false
+		fieldset: legend Tambah Transaksi
 
-		em-input label='Nama' property='name'
-		em-input label='Alamat' property='address'
-		em-input label='Kontak' property='contact'
+		div.row
+			div.form-group.col-sm-4
+				label for='transaction-code' No Nota:
+				input value=transactionCode class='form-control' id='transaction-code'
+
+			div.form-group.col-sm-4
+				label for='date-now' Tgl Pinjam:
+				pikaday-input value=dateNow format='DD MMM YY' class='form-control' id='date-now'
+
+			div.form-group.col-sm-4
+				label for='max-returned-at' Batas kembali:
+				pikaday-input value=maxReturnedAt format='DD MMM YY' class='form-control' id='max-returned-at'
+
+		div.form-group
+			label for='items' Daftar barang:
+			multi-select-component contentBinding='items' optionLabelPath='name' optionValuePath='id' classNames='form-control' id='items' placeholder='Klik untuk tambah barang'
+
+		hr.darken
+
+		div.row
+			div.form-group.col-sm-4
+				label for='total-price' Total:
+				input type='number' value=totalPrice class='form-control' id='total-price' disabled='disabled'
+
+			div.form-group.col-sm-4
+				label for='pay-value' Bayar:
+				input type='number' value=payValue class='form-control' id='pay-value'
+
+			div.form-group.col-sm-4
+				label for='change' Kembalian:
+				input type='number' value=change class='form-control' id='change' disabled='disabled'
+
+		div.form-group
+			input.btn.btn-primary type='submit' value='Submit'
+			span.checkbox.inline-checkbox: label
+				input type='checkbox' checked=isCashPayment
+				| Pembayaran via cash

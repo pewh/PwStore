@@ -11,14 +11,17 @@ sub-header
 		table.table
 			thead: tr
 				th Tanggal
-				th No Transaksi
+				th Nota
 				th Pelanggan
-				th Total Harga
+				th Cash?
+				th Harga
 			tbody: each model in filteredModel
 				tr-transaction-status status=model.transaction_status
 					td: format-datetime model.created_at
 					td = model.code
 					td = model.customer.name
+					td
+						i class={:glyphicon model.is_cash_payment:glyphicon-ok:glyphicon-remove}
 					td: format-currency model.total_prices
 
 					td

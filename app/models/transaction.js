@@ -30,15 +30,16 @@ var Transaction = DS.Model.extend({
   }),
   customer: DS.belongsTo('customer', { async: true }),
   details: DS.hasMany('transaction-detail', { async: true }),
+  is_cash_payment: DS.attr('boolean'),
   total_prices: totalPrices,
   transaction_status: transactionStatus
 });
 
 Transaction.reopenClass({
   FIXTURES: [
-    { id: 1, code: 'transaction 1', customer: 1, created_at: moment("2013-12-25").toDate(), details: [1, 2] },
-    { id: 2, code: 'transaction 2', customer: 2, details: [3, 4] },
-    { id: 3, code: 'transaction 3', customer: 1, created_at: moment("2014-10-22").toDate(), details: [5] }
+    { id: 1, code: '001', customer: 1, is_cash_payment: true, created_at: moment("2013-12-25").toDate(), details: [1, 2] },
+    { id: 2, code: '002', customer: 2, is_cash_payment: false, details: [3, 4] },
+    { id: 3, code: '003', customer: 1, is_cash_payment: true, created_at: moment("2014-10-22").toDate(), details: [5] }
   ]
 });
 

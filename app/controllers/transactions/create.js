@@ -1,8 +1,23 @@
 import Ember from 'ember';
 
+var a = Ember.A();
+a.pushObject({ id: 2, name: '2323' });
+a.pushObject({ id: 4, name: '2323' });
+a.pushObject({ id: 2, name: '2323' });
+a.pushObject({ id: 2, name: '2323' });
+
 export default Ember.ObjectController.extend({
-	needs: ['transaction_details'],
-	
+	transactionCode: '232314',
+	dateNow: new Date(),
+	maxReturnedAt: new Date(),
+	isCashPayment: true,
+
+	totalPrice: 0,
+	payValue: 0,
+	change: 0,
+
+	items: a,
+
 	clearForm: function() {
 		this.set('code', '');
 		this.set('customer', null);

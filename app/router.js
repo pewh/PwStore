@@ -22,6 +22,7 @@ Router.map(function() {
   });
 
   this.route('missing', { path: '/*path' });
+  this.route('transactions/create');
 });
 
 export default Router;

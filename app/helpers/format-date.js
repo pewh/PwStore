@@ -2,7 +2,7 @@
 
 	export function formatDatetime(input) {
 	  if ( input ) {
-	    return moment(input).format('DD/MM/YYYY hh:mm:ss');
+	    return moment(input).format('DD/MM/YYYY');
 	  } else {
 	  	return '-';
 	  }
