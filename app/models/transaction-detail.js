@@ -37,12 +37,13 @@ var TransactionDetail = DS.Model.extend({
   borrowed_at: borrowedAt,
   max_returned_at: maxReturnedAt,
   returned_at: DS.attr('date'),
-  // price: function() {
-  //   return this.get('item.price');
-  // }.property(),
+  price: function() {
+    debugger;
+    return this.get('item.price');
+  }.property(),
   total_fine: totalFine,
 
-  price: DS.attr('number') //, {
+  // price: DS.attr('number') //, {
   //   defaultValue: function( detail) { return detail.get('item.price'); }
   // }),
 });

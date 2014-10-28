@@ -1,7 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-	needs: ['transaction_details'],
+	transactionCode: '',
+	dateNow: new Date(),
+	maxReturnedAt: new Date(),
+	isCashPayment: true,
+
+	totalPrice: 0,
+	payValue: 0,
+	change: 0,
+
+	items: 0,
 	
 	clearForm: function() {
 		this.set('code', '');

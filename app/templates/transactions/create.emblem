@@ -1,7 +1,25 @@
 .well
-	em-form form_layout='horizontal' model=this action='create'
-		fieldset: legend Tambah Pelanggan
+	em-form form_layout='form' model=this action='create'
+		fieldset: legend Tambah Transaksi
 
-		em-input label='Nama' property='name'
-		em-input label='Alamat' property='address'
-		em-input label='Kontak' property='contact'
+		em-input label='No Transaksi' property='transactionCode'
+
+		div.row
+			div.form-group.col-sm-6
+				label for='date-now' Tgl Pinjam:
+				pikaday-input value=dateNow format='DD MMM YY' class='form-control' id='date-now'
+
+			div.form-group.col-sm-6
+				label for='max-returned-at' Batas tgl kembali:
+				pikaday-input value=maxReturnedAt format='DD MMM YY' class='form-control' id='max-returned-at'
+
+		.form-group
+			input.btn.btn-primary type='submit' value='Submit'
+			'
+			div.checkbox: label
+				input type='checkbox'
+				| Pembayaran via cash	
+
+		div.form-group
+			label for='items' Daftar barang:
+			/ multi-select-component contentBinding='items' optionLabelPath='name' optionValuePath='id' classNames='multi-select-example' id='items'
