@@ -7,7 +7,7 @@ a.pushObject({ id: 2, name: '2323' });
 a.pushObject({ id: 2, name: '2323' });
 
 export default Ember.ObjectController.extend({
-	needs: ['items'],
+	needs: ['item'],
 
 	transactionCode: '232314',
 	dateNow: new Date(),
