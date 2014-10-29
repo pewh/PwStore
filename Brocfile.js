@@ -17,8 +17,11 @@ app.import('bower_components/bootswatch/sandstone/bootstrap.min.css');
 app.import('bower_components/ember-forms/dist/globals/main.js');
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/lodash/lodash.js');
+app.import('bower_components/d3/d3.js');
 app.import('bower_components/ember-list-view/list-view.js');
 app.import('bower_components/ember-widgets/dist/css/ember-widgets.css');
 app.import('bower_components/ember-widgets/dist/js/ember-widgets.js');
+app.import('bower_components/ember-charts/dist/ember-charts.css');
+app.import('bower_components/ember-charts/dist/ember-charts.js');
 
 module.exports = app.toTree();

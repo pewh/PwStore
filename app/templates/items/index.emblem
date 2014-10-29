@@ -1,0 +1,15 @@
+.well: fieldset
+	legend Status Persediaan Barang
+
+	div.form-group.row
+		div.navbar-alert.alert.alert-info.col-sm-6
+			i.glyphicon.glyphicon-ok
+			'
+			span #{availableQty} item tersedia
+
+		div.navbar-alert.alert.alert-warning.col-sm-6
+			i.glyphicon.glyphicon-remove
+			'
+			span #{borrowedQty} item sedang dipinjam
+
+	pie-chart data=qtyStatus

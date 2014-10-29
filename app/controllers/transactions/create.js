@@ -7,6 +7,8 @@ a.pushObject({ id: 2, name: '2323' });
 a.pushObject({ id: 2, name: '2323' });
 
 export default Ember.ObjectController.extend({
+	needs: ['items'],
+
 	transactionCode: '232314',
 	dateNow: new Date(),
 	maxReturnedAt: new Date(),
@@ -16,9 +18,10 @@ export default Ember.ObjectController.extend({
 	payValue: 0,
 	change: 0,
 
-	items: a,
+	items: Ember.computed.alias('controllers.items.availableQty'),
 
 	clearForm: function() {
+		debugger;
 		this.set('code', '');
 		this.set('customer', null);
 		this.set('details', []);
