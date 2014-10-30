@@ -24,4 +24,4 @@ sub-header
 					'
 					bs-button clicked='destroyRecord' clickedParamBinding='model' size='xs' icon='glyphicon glyphicon-remove' type='danger' title='Delete'
 
-	.col-sm-offset-1.col-sm-5 == outlet
+	.col-sm-6 == outlet
